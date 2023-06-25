@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DemoPathVariable {
+public class DemoPathVariable{
 
     @RequestMapping("/even_odd/{number}")
     public String evenOdd(@PathVariable int number){
