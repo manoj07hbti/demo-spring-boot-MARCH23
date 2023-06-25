@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //Make the Calculator app project using Controller class in Spring Boot============================
 @RestController
-public class Calculator_Project {
+public class Calculator_Controler_Project {
     @RequestMapping("/addition")
     public String addition(){
         int a=12;
