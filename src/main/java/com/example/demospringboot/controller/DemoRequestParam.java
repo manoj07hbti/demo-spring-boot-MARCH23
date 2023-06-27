@@ -1,5 +1,6 @@
 package com.example.demospringboot.controller;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,12 @@ public class DemoRequestParam {
     public String greeting(@RequestParam String name){
 
         return "Hello "+name+ " Welcome to Path variable demo..";
+    }
+
+    @RequestMapping("/greeting/{message}")
+    public String greetingAdvance(@RequestParam String name, @PathVariable String message){
+
+        return "Hello "+name+ " Welcome to Path variable demo.."+message;
     }
 
     @RequestMapping("/vote")
