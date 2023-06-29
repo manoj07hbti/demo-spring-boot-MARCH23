@@ -7,25 +7,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RequestParam_Calculator {
 
-    @RequestMapping("/Add")
+    @RequestMapping("/req_add")
     public String addition(@RequestParam int a, @RequestParam int b ){
          int d = a+b;
          return "the addition of "+ a +"and"+ b +":"+ d;
     }
 
-    @RequestMapping("/sub")
+    @RequestMapping("/req_sub")
     public String subtraction (@RequestParam int a, @RequestParam int b ){
         int d = a-b;
         return "the subtraction of "+ a +"and"+ b +":"+ d;
     }
 
-    @RequestMapping("/multi")
+    @RequestMapping("/req_multi")
     public String multiplication (@RequestParam int a, @RequestParam int b ){
         int d = a*b;
         return "the multiplication of "+ a +"and"+ b +":"+ d;
     }
 
-    @RequestMapping("/div")
+    @RequestMapping("/req_div")
     public String divide (@RequestParam int a, @RequestParam int b ){
         double d = a/b;
         return "the divide of "+ a +"and"+ b +":"+ d;
