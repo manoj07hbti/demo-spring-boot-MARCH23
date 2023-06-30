@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
-public class ControllerAdvance_PathVariable {
+public class Stu_ControllerAdvance_PathVariable {
     ArrayList<Student> studentArrayList=new ArrayList<>();
     @RequestMapping("/create_student/{name}/{section}/{roll_no}")
     public Student createstudent(@PathVariable String name,@PathVariable String section,@PathVariable int roll_no){
