@@ -26,7 +26,7 @@ public class City_CRUD_Opertion {
     @RequestMapping("/update_city")
     public String update(@RequestParam int index,@RequestParam String cityname ){
         cityArrayList.set(index,cityname);
-        return cityname+"update successfully";
+        return cityname+ " update successfully";
     }
     //D-DELETE
     @RequestMapping("/remove_city")
