@@ -32,6 +32,6 @@ public class City_CRUD_Opertion {
     @RequestMapping("/remove_city")
     public String delete(@RequestParam int index){
         cityArrayList.remove(index);
-        return "remove successfully";
+        return " remove successfully";
     }
 }
