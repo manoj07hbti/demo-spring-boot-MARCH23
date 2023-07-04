@@ -1,11 +1,11 @@
 package com.example.demospringboot.model;
 
-public class Employee_Class {
+public class Employee {
     String name;
     String company_Name;
     int salary;
 
-    public Employee_Class (String name,String company_Name,int salary){
+    public Employee(String name, String company_Name, int salary){
 
         this.name=name;
         this.company_Name=company_Name;
