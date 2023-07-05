@@ -45,5 +45,6 @@ public class Doctor_Crud_con {
     public String remove (int index){
         doctorArrayList.remove(index);
         return "Deleted Successfully....";
+
     }
 }
