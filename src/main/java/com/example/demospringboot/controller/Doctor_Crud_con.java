@@ -46,5 +46,6 @@ public class Doctor_Crud_con {
         doctorArrayList.remove(index);
         return "Deleted Successfully....";
 
+
     }
 }
