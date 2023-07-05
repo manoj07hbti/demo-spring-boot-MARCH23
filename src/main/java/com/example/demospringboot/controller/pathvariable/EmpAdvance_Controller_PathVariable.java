@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 @RestController()
-public class AdvEmp_Controller_PathVariable {
+public class EmpAdvance_Controller_PathVariable {
     ArrayList<Employee> employeeArrayList=new ArrayList<>();
 
 //Creating Employee Data in a list========================================================
@@ -19,4 +19,20 @@ public ArrayList<Employee> employee_List (@PathVariable String Name, @PathVariab
     employeeArrayList.add(emp);
     return employeeArrayList;
 }
+
+//Emp list Search by salary================================================================
+@RequestMapping("/find_Employee/{Salary}")
+    public Employee employeeFound_Salary(@PathVariable int Salary){
+    Employee found_empSalary = null;
+
+    for (Employee emp_salary:employeeArrayList){
+
+     if (Salary==emp_salary.getSalary()){
+
+        found_empSalary=emp_salary;
+     }
+    }
+    return found_empSalary;
+    }
+
 }
