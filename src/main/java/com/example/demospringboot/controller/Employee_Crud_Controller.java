@@ -9,7 +9,7 @@ import java.util.ArrayList;
 @RestController
 public class Employee_Crud_Controller {
     ArrayList<Employee> EmployeeArrayList = new ArrayList<>();
-  @RequestMapping("/Employee_joint/{name}/{id_no}/{Department}")
+  @RequestMapping("/join_Employee/{name}/{id_no}/{Department}")
     public String add (@PathVariable String name,@PathVariable int id_no,@PathVariable String Department ){
 
         Employee employee = new Employee(name,id_no,Department);
@@ -18,5 +18,23 @@ public class Employee_Crud_Controller {
 
         return "Employee added  Successfully";
 
+    }
+@RequestMapping("/get_employees")
+    public ArrayList<Employee> getEmployeeArrayList() {
+        return EmployeeArrayList;
+    }
+@RequestMapping("/update_Employee/{name}/{index}")
+    public String update(@PathVariable String name,@PathVariable int index){
+
+       Employee employee = EmployeeArrayList.get(index);
+       employee.setName(name);
+
+       return "name update successfully";
+    }
+    @RequestMapping("/remove_employee/{index}")
+    public String remove (@PathVariable int index){
+
+      EmployeeArrayList.remove(index);
+      return "Deleted successfully";
     }
 }
