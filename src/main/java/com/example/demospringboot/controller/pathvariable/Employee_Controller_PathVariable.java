@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 public class Employee_Controller_PathVariable {
     @RequestMapping("Employee/{Name}/{Company_Name}/{Salary}")
-    public Employee advanceEmployee (@PathVariable String Name, @PathVariable String Company_Name,
+    public Employee createEmployee (@PathVariable String Name, @PathVariable String Company_Name,
                                      @PathVariable int Salary){
 
         return new Employee(Name,Company_Name,Salary);
