@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Doctor_CRUD_PathVariable {
     ArrayList<Doctor> doctorArrayList = new ArrayList<>();
 
-
+    // C-Creating Data=============================================
     @RequestMapping("/Add/{id}/{Department}/{Hospital_Name}")
     public ArrayList<Doctor> add (@PathVariable int id, @PathVariable String Department,
                                   @PathVariable String Hospital_Name){
