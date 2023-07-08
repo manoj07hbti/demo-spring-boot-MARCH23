@@ -1,6 +1,7 @@
 package com.example.demospringboot.controller;
 
 import com.example.demospringboot.model.Student;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,10 +11,8 @@ public class StudentCrudController {
 
     ArrayList<Student> studentArrayList= new ArrayList<>();
 
-    @PostMapping("/add_student/{name}/{roll_no}/{section}")
-    public String add(@PathVariable String name,@PathVariable int roll_no,@PathVariable String section){
-
-        Student student= new Student(name,roll_no,section);
+    @PostMapping("/add_student")
+    public String add(@RequestBody  Student student){
 
         studentArrayList.add(student);
         return "Student Added Successfully....";
