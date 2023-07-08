@@ -21,7 +21,7 @@ public class Student_Crud_Post {
         return StuArraylist;
 
     }
-    @PutMapping("/update_stu_Post/{index}/{nmae}")
+    @PutMapping("/update_stu_Post/{index}/{name}")
     public String update_stud(@PathVariable String name,@PathVariable int index){
         Student_class student_class=StuArraylist.get(index);
         student_class.setName(name);
