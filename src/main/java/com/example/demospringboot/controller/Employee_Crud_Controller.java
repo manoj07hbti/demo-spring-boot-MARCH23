@@ -1,15 +1,13 @@
 package com.example.demospringboot.controller;
 
 import com.example.demospringboot.model.Employee;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 @RestController
 public class Employee_Crud_Controller {
     ArrayList<Employee> EmployeeArrayList = new ArrayList<>();
-  @RequestMapping("/join_Employee/{name}/{id_no}/{Department}")
+  @PostMapping("/join_Employee/{name}/{id_no}/{Department}")
     public String add (@PathVariable String name,@PathVariable int id_no,@PathVariable String Department ){
 
         Employee employee = new Employee(name,id_no,Department);
@@ -19,11 +17,11 @@ public class Employee_Crud_Controller {
         return "Employee added  Successfully";
 
     }
-@RequestMapping("/get_employees")
+@GetMapping("/get_employees")
     public ArrayList<Employee> getEmployeeArrayList() {
         return EmployeeArrayList;
     }
-@RequestMapping("/update_Employee/{name}/{index}")
+@PutMapping("/update_Employee/{name}/{index}")
     public String update(@PathVariable String name,@PathVariable int index){
 
        Employee employee = EmployeeArrayList.get(index);
@@ -31,7 +29,7 @@ public class Employee_Crud_Controller {
 
        return "name update successfully";
     }
-    @RequestMapping("/remove_employee/{index}")
+    @DeleteMapping("/remove_employee/{index}")
     public String remove (@PathVariable int index){
 
       EmployeeArrayList.remove(index);
