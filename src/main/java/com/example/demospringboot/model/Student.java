@@ -1,11 +1,23 @@
 package com.example.demospringboot.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "STUDENT_MARCH_23")
 public class Student {
 
+    @Id // it will make this field as primary key
+    @GeneratedValue // it will automatically assign this value to id and increase by one
+    long id;
     String name;
     int roll_no;
 
     String section;
+
+    //Default constructor
+    public Student() {
+    }
 
     public Student(String name, int roll_no, String section) {
         this.name = name;
