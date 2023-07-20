@@ -1,6 +1,16 @@
 package com.example.demospringboot.model;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="Doctor_Information")
 public class Doctor {
+    @Id
+    @GeneratedValue
+    long id;
     String name;
     String specilization;
     int id_num;

@@ -1,6 +1,14 @@
 package com.example.demospringboot.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="Employee_Data")
 public class Employee {
+    @Id
+    @GeneratedValue
+    long id;
     String name;
     String dept;
     int salary;
