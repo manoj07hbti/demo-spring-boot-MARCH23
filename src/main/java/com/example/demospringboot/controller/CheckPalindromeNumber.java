@@ -19,8 +19,8 @@ public class CheckPalindromeNumber {
                 num=num/10;
             }
             if (oreg_num==rev){
-                return  "number is palindrome";
-            }else return  "number is not palindrome";
+                return "number is palindrome";
+            }else return "number is not palindrome";
         }
 
     }
