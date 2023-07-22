@@ -1,9 +1,21 @@
 package com.example.demospringboot.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="Employee_Data_23")
 public class Employee {
+    @Id  //It will make this field as primary key=====================================
+    @GeneratedValue  // it will automatically assign this value to id and increase by one=====================
+    long Emp_Id;
     String name;
     String company_Name;
     int salary;
+
+    // Creating Default Constructor=======================================================
+    public Employee() {
+    }
 
     public Employee(String name, String company_Name, int salary){
 

@@ -1,9 +1,20 @@
 package com.example.demospringboot.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="Doctor_Data_23")
 public class Doctor {
+    @Id
+    @GeneratedValue
+    long Doc_Id;
     int id;
     String Department;
     String Hospital_Name;
+
+    public Doctor() {
+    }
 
     public Doctor(int id, String department, String hospital_Name) {
         this.id = id;
