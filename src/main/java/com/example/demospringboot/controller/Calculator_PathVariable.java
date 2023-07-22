@@ -21,7 +21,7 @@ public class Calculator_PathVariable {
         int mul=a*b;
         return "The Multiply a and b"+mul;
     }
-    @RequestMapping("/Div/{a}/{b]")
+    @RequestMapping("/Div/{a}/{b}")
     public String Div(@PathVariable int a,@PathVariable int b){
         int div=a/b;
         return "The Divide a and b"+div;

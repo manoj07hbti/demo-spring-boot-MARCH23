@@ -6,7 +6,7 @@ import javax.persistence.Id;
 
 @Entity(name="Student_March")
 
-public class Student_class {
+public class Student_class{
     @Id
     @GeneratedValue
     long id;
@@ -14,7 +14,7 @@ public class Student_class {
     int roll_no;
     String section;
 
-    public Student_class() {
+    public Student_class(){
     }
 
     public Student_class(String name, int roll_no, String section){

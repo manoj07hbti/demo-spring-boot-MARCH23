@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name = "Employee_March")
-public class Employee_Class {
+public class Employee_Class{
     @Id
     @GeneratedValue
     long id_number;
@@ -13,7 +13,7 @@ public class Employee_Class {
     int id;
     String Department;
 
-    public Employee_Class() {
+    public Employee_Class(){
     }
 
     public Employee_Class(String Name, int id, String Department){
