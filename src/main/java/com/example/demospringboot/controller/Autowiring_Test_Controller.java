@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Test_Controller {
+public class Autowiring_Test_Controller {
     @Autowired //spring Annotation to create Object====================================
     Test_Service obj;
     @GetMapping("/autowiring")
