@@ -19,7 +19,8 @@ public class StudentCRUD_controller {
     }
     //read
     @RequestMapping("/get_students")
-    public ArrayList<Student>getStudents(){
+    public ArrayList<Student>getStudents()
+    {
         return studentArrayList;
     }
     @RequestMapping("/update_student/{index}/{name}")
