@@ -11,7 +11,7 @@ public class Student {
     @GeneratedValue // it will automatically assign this value to id and increase by one
     long id;
     String name;
-    int roll_no;
+    int rollNo;
 
     String section;
 
@@ -21,7 +21,7 @@ public class Student {
 
     public Student(String name, int roll_no, String section) {
         this.name = name;
-        this.roll_no = roll_no;
+        this.rollNo = roll_no;
         this.section = section;
     }
 
@@ -34,11 +34,11 @@ public class Student {
     }
 
     public int getRoll_no() {
-        return roll_no;
+        return rollNo;
     }
 
     public void setRoll_no(int roll_no) {
-        this.roll_no = roll_no;
+        this.rollNo = roll_no;
     }
 
     public String getSection() {

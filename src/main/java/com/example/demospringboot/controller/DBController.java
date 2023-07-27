@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class DBController {
@@ -36,6 +37,24 @@ public class DBController {
     public String delete(@PathVariable long id){
 
         return service.delete(id);
+    }
+
+    @GetMapping("/find_by_id/{id}")
+    public Optional<Student> getStudent(@PathVariable long id){
+
+        return service.findStudentById(id);
+    }
+
+    @GetMapping("/find_by_roll_no/{roll_no}")
+    public Student getStudent(@PathVariable int roll_no){
+
+        return service.findStudentByRollNo(roll_no);
+    }
+
+    @GetMapping("/find_by_roll_no_name/{roll_no}/{name}")
+    public Student getStudent(@PathVariable int roll_no,@PathVariable String name){
+
+        return service.findStudentByRollNoName(roll_no,name);
     }
 
 }

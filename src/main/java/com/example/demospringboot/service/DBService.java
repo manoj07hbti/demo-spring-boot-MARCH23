@@ -4,7 +4,6 @@ import com.example.demospringboot.model.Student;
 import com.example.demospringboot.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,4 +45,19 @@ public class DBService {
         return "Student deleted successfully..";
     }
 
+
+    public Optional<Student> findStudentById(long id){
+
+      return  repository.findById(id);
+    }
+
+    public Student findStudentByRollNo(int roll_no){
+
+        return  repository.findByRollNo(roll_no);
+    }
+
+    public Student findStudentByRollNoName(int roll_no, String name){
+
+        return  repository.findByRollNoAndName(roll_no,name);
+    }
 }
