@@ -13,7 +13,7 @@ public class Student {
     long id;
     String name;
     String section;
-    int roll_no;
+    int rollNo;
 
     //default constructor
     public Student() {
@@ -22,7 +22,7 @@ public class Student {
     public Student(String name, String section, int roll_no) {
         this.name = name;
         this.section = section;
-        this.roll_no = roll_no;
+        this.rollNo = roll_no;
     }
 
     public String getName() {
@@ -42,10 +42,10 @@ public class Student {
     }
 
     public int getRoll_no() {
-        return roll_no;
+        return rollNo;
     }
 
     public void setRoll_no(int roll_no) {
-        this.roll_no = roll_no;
+        this.rollNo = roll_no;
     }
 }

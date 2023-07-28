@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class DB_Stu_Controller {
@@ -32,7 +33,21 @@ public class DB_Stu_Controller {
 
     @DeleteMapping("/delete_stu_db/{id}") // delete
     public String delete_Student(@PathVariable Long id){
+
         return service.delete_Student(id);
     }
 
+    @GetMapping("/find_Student_By_ID/{id}")
+    public Optional<Student> findStudentByID(@PathVariable long id){
+        return service.findStudentByID(id);
+    }
+
+    @GetMapping ("/find_Student_By_RollNo/{rollNo}")
+    public Student getStudent(@PathVariable int rollNo){
+       return  service.findStudentByRollNo(rollNo);
+    }
+    @GetMapping ("/find_Student_By_RollNo_Name/{rollNo}/{name}")
+    public Student getStudent(@PathVariable int rollNo,@PathVariable String name){
+        return  service.findStudentByRollNoName(rollNo,name);
+    }
 }
