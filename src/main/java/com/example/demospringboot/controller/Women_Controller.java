@@ -5,6 +5,8 @@ import com.example.demospringboot.model.Women_Class;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 public class Women_Controller {
     @Autowired
@@ -24,6 +26,15 @@ public class Women_Controller {
         return dbWomenService.del_Women(id);
 
     }
+    @GetMapping("/find_by_id/{id}")
+    public Optional<Women_Class> getWomen(@PathVariable long id){
+        return dbWomenService.findWomen_ClassById(id);
+    }
+    @GetMapping("/find_by_city/{city}")
+    public Women_Class getWomen(@PathVariable String city){
+        return dbWomenService.findWomen_ClassByCity(city);
+    }
+
 
 
 

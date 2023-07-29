@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DBWomen_Service {
@@ -30,4 +31,17 @@ public class DBWomen_Service {
         dbWomenRepository.deleteById(id);
         return "delete successfully";
     }
+
+    public Optional<Women_Class> findWomen_ClassById(Long id){
+        return dbWomenRepository.findById(id);
+
+    }
+    public Women_Class findWomen_ClassByCity(String City){
+        return dbWomenRepository.findByCity(City);
+
+    }
+
+
+
+
 }
