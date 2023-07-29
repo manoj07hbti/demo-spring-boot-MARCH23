@@ -27,7 +27,7 @@ public class Emp_Service {
     public String updateEmp(long id,String name){
 
         //STEP-1:- This method  will find data from the table=============================================
-        Employee employee= emp_repository.getById(id);
+        Employee employee= emp_repository.getReferenceById(id);
 
         //STEP-2:- This method will update the data in database===========================================
         employee.setName(name);
@@ -44,4 +44,19 @@ public class Emp_Service {
         return "Delete employee data successfully";
     }
 
+    //Find Data form data base with id project======================================================
+
+    public Optional<Employee> findEmpByID(long id){
+     return emp_repository.findById(id);
+    }
+
+    public Employee findEmployeeByCompany_Name(String company_Name){
+
+        return  emp_repository.findByCompany_Name(company_Name);
+    }
+
+    public Employee findStudentByRollNoName(int salary, String name){
+
+        return  emp_repository.findBySalaryAndName(salary,name);
+    }
 }

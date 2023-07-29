@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class DB_Emp_Controller {
@@ -33,6 +34,11 @@ public class DB_Emp_Controller {
     public String delEmp(@PathVariable long id){
         return Service.delEmp(id);
 
+    }
+
+    @PutMapping("/Emp_By_ID/{id}")
+    public Optional<Employee> findEmpID(@PathVariable long id){
+        return Service.findEmpByID(id);
     }
 
 }
