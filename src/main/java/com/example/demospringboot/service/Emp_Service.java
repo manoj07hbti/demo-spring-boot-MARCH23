@@ -49,14 +49,4 @@ public class Emp_Service {
     public Optional<Employee> findEmpByID(long id){
      return emp_repository.findById(id);
     }
-
-    public Employee findEmployeeByCompany_Name(String company_Name){
-
-        return  emp_repository.findByCompany_Name(company_Name);
-    }
-
-    public Employee findStudentByRollNoName(int salary, String name){
-
-        return  emp_repository.findBySalaryAndName(salary,name);
-    }
 }
