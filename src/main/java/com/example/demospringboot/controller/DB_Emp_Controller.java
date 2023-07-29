@@ -3,10 +3,7 @@ package com.example.demospringboot.controller;
 import com.example.demospringboot.model.Employee;
 import com.example.demospringboot.service.Emp_Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +21,18 @@ public class DB_Emp_Controller {
     public List<Employee> employeeList(){
 
         return Service.getEmployee();
+    }
+
+    @PutMapping("/Update_Emp_DB/{id}/{name}")
+    public String updateEmp(@PathVariable long id,@PathVariable String name){
+
+        return Service.updateEmp(id, name);
+
+    }
+    @DeleteMapping("/Delete_Emp_DB/{id}")
+    public String delEmp(@PathVariable long id){
+        return Service.delEmp(id);
+
     }
 
 }
