@@ -12,9 +12,7 @@ public class Employee {
     String name;
     String dept;
     int salary;
-
     // parameterized constructor
-
     public Employee(String name, String dept, int salary) {
         this.name = name;
         this.dept = dept;
@@ -26,6 +24,13 @@ public class Employee {
     }
     // getter and setter
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
