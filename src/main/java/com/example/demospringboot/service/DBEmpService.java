@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DBEmpService {
@@ -29,4 +30,41 @@ public class DBEmpService {
         repository.deleteById(id);
         return "employee delete successfully";
     }
+
+//    public String updateemply(Employee employee){
+//
+//
+//         String name= String.valueOf(employee.getName()); //get employee by id
+//
+//        Employee emp=repository.findByName(name).getName();  //set employee name
+//
+//        emp.setDept(employee.getDept());
+//        emp.setSalary(employee.getSalary());
+//        repository.save(emp);//save data in repository or database
+//        return "succesfully updated";
+//
+//    }
+    public Optional<Employee> findById(@PathVariable Long id){
+        return repository.findById(id);
+
+    }
+
+    public Employee findByName(String name){
+        return repository.findByName(name);
+    }
+    public Employee findByDept(String dept){
+        return  repository.findByDept(dept);
+    }
+    public Employee findBySalary(int salary){
+        return repository.findBySalary(salary);
+    }
+    public Employee findByNameAndId(Long id,String name){
+        return findByNameAndId(id,name);
+    }
+    public Employee findByNameOrSalry(String name,int salary){
+        return repository.findByNameOrSalary(name,salary);
+    }
+
+
+
 }
