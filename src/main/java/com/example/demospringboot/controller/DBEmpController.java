@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class DBEmpController {
@@ -33,7 +34,38 @@ public class DBEmpController {
     @DeleteMapping("/delempl/{id}")
     public String delemp(@PathVariable Long id){
         return service.deleteempl(id);
+    }
 
+//    @PutMapping("/updateinstance")
+//    public String updateemp(@RequestBody Employee employee){
+//        return service.updateemply(employee);
+//    }
+
+    @GetMapping("/findbyid/{id}")
+    public Optional<Employee> findbyid(@PathVariable Long id){
+        return service.findById(id);
+    }
+
+    @GetMapping ("/find_byname/{name}")
+    public Employee findbyname(@PathVariable String name){
+        return service.findByName(name);
+    }
+    @GetMapping("/find_byndept/{dept}")
+    public Employee findbydept(@PathVariable String dept){
+        return service.findByDept(dept);
+    }
+    @GetMapping("/find_bysalary/{salary}")
+    public Employee findbysalary(@PathVariable int salary){
+
+        return service.findBySalary(salary);
+    }
+    @GetMapping("/find_bynameandidt/{id}/{name}")
+    public Employee fndbynameanddept(@PathVariable Long id,@PathVariable String name){
+        return service.findByNameAndId(id,name);
+    }
+    @GetMapping("/find_bynameorsalary/{name}/{salary}")
+    public Employee findbynameOrSalary(@PathVariable String name,@PathVariable int salary){
+        return service.findByNameOrSalry(name,salary);
     }
 }
 
