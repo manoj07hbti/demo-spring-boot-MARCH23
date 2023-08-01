@@ -32,6 +32,7 @@ public class DB_Stu_Service {
         return "record updated successfully";
     }
 
+
     public String delete_Student(Long id){
         repository.deleteById(id);
 

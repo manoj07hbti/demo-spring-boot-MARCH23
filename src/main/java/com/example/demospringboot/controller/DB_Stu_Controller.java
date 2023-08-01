@@ -31,6 +31,7 @@ public class DB_Stu_Controller {
         return service.updateStudents(id,name);
     }
 
+
     @DeleteMapping("/delete_stu_db/{id}") // delete
     public String delete_Student(@PathVariable Long id){
 
