@@ -60,4 +60,14 @@ public class DBService {
 
         return  repository.findByRollNoAndName(roll_no,name);
     }
+
+    public Student findStudentNative(int roll_no, String section){
+
+        return  repository.findStudentNative(roll_no,section);
+    }
+
+    public List<Student> getStudentsNative(){
+
+        return repository.findAllStudentNative(); // select * from table
+    }
 }

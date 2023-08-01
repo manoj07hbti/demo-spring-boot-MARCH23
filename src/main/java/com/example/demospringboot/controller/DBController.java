@@ -27,6 +27,13 @@ public class DBController {
 
     }
 
+    @GetMapping("/get_all_native")
+    public List<Student> getStudentsNative(){
+
+        return service.getStudentsNative();
+
+    }
+
     @PutMapping("/update_std_db/{id}/{name}")
     public String updateStudent(@PathVariable long id, @PathVariable String name){
 
@@ -55,6 +62,12 @@ public class DBController {
     public Student getStudent(@PathVariable int roll_no,@PathVariable String name){
 
         return service.findStudentByRollNoName(roll_no,name);
+    }
+
+    @GetMapping("/find_by_native/{roll_no}/{section}")
+    public Student getStudentNative(@PathVariable int roll_no,@PathVariable String section){
+
+        return service.findStudentNative(roll_no,section);
     }
 
 }
