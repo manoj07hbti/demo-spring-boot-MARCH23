@@ -36,7 +36,7 @@ public class DB_Emp_Controller {
 
     }
 
-    @PutMapping("/Emp_By_ID/{id}")
+    @GetMapping("/Emp_By_ID/{id}")
     public Optional<Employee> findEmpID(@PathVariable long id){
         return Service.findEmpByID(id);
     }
