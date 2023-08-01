@@ -3,7 +3,7 @@ package com.example.demospringboot.Service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Test_Service {
+public class All_Service {
     public String BikeService(){
         return "this is my BikeService";
     }
