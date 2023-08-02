@@ -50,4 +50,12 @@ public class DB_Stu_Service {
         return repository.findByRollNoAndName(rollNo,name);
     }
 
+    public Student findStudentNative(int rollNo, String section){
+        return repository.findStudentNative(rollNo,section);
+    }
+
+    public List<Student> getStudentByNative(){
+        return  repository.findAllStudentNative();
+    }
+
 }

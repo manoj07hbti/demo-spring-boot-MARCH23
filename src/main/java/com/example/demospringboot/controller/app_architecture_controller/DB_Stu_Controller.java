@@ -1,4 +1,4 @@
-package com.example.demospringboot.controller;
+package com.example.demospringboot.controller.app_architecture_controller;
 
 import com.example.demospringboot.model.Student;
 import com.example.demospringboot.service.DB_Stu_Service;
@@ -51,4 +51,12 @@ public class DB_Stu_Controller {
     public Student getStudent(@PathVariable int rollNo,@PathVariable String name){
         return  service.findStudentByRollNoName(rollNo,name);
     }
-}
+    @GetMapping ("/find_Student_By_native/{rollNo}/{section}")
+    public Student findStudentNative(@PathVariable int rollNo,@PathVariable String section) {
+        return service.findStudentNative(rollNo, section);
+    }
+    @GetMapping ("/find_Student_By_native")
+    public List<Student> getStudentByNative() {
+        return service.getStudentByNative();
+    }
+    }
