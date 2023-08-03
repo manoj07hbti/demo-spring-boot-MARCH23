@@ -67,5 +67,18 @@ public class DBEmpController {
     public Employee findbynameOrSalary(@PathVariable String name,@PathVariable int salary){
         return service.findByNameOrSalry(name,salary);
     }
+    @GetMapping ("/find_bynamenid/{id}/{name}")
+    public Employee findbynamenidNative(@PathVariable Long id,@PathVariable String name){
+        return service.findByNameAndIdNative(id,name);
+    }
+    @GetMapping("/get_allempnative")
+    public List<Employee> getallempl(){
+        return service.findAllEmployeeNative();
+    }
+    @GetMapping ("/find_bynameNative/{name}")
+    public Employee findbyNameNative(@PathVariable String name) {
+        return service.findByName(name);
+
+    }
 }
 

@@ -65,6 +65,15 @@ public class DBEmpService {
         return repository.findByNameOrSalary(name,salary);
     }
 
-
+    // native method logics
+    public Employee findByNameAndIdNative(Long id,String name){
+        return repository.findByNameAndIdNative(id,name);
+    }
+    public List<Employee>findAllEmployeeNative(){
+        return repository.findAllEmployeeNative();
+    }
+    public Employee getbyNameNative(String name){
+        return repository.findByNameNative(name);
+    }
 
 }
