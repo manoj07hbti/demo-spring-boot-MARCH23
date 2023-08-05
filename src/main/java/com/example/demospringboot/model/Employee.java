@@ -1,6 +1,15 @@
 package com.example.demospringboot.model;
 
+import org.yaml.snakeyaml.events.Event;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "EMPLOYEE_MARCH_23")
 public class Employee {
+  @Id
+  @GeneratedValue
 
     String name;
     int id_no;

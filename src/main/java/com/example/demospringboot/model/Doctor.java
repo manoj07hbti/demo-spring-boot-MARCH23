@@ -8,9 +8,9 @@ import javax.persistence.Id;
 public class Doctor {
     @Id
     @GeneratedValue
-    long id_number;
+    long id;
     String name;
-    int id ;
+    int id_num ;
     String Speciality;
 
     public Doctor() {
@@ -31,7 +31,7 @@ public class Doctor {
     }
 
     public int getId() {
-        return id;
+        return id_num;
     }
 
     public void setId(int id) {

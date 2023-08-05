@@ -3,10 +3,14 @@ package com.example.demospringboot.model;
 import javax.naming.Name;
 
 public class Engineer {
+    long id;
     String name;
     int age;
     String company;
     int salary;
+
+    public Engineer() {
+    }
 
     public Engineer(String name, int age, String company, int salary) {
         this.name = name;
@@ -14,7 +18,6 @@ public class Engineer {
         this.company = company;
         this.salary = salary;
     }
-
     public String getName() {
         return name;
     }

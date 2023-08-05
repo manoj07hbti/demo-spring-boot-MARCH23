@@ -1,7 +1,10 @@
 package com.example.demospringboot.controller;
 
 import com.example.demospringboot.model.Employee;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 @RestController
@@ -17,11 +20,11 @@ public class Employee_Crud_Controller {
         return "Employee added  Successfully";
 
     }
-@GetMapping("/get_employees")
+@RequestMapping("/get_employees")
     public ArrayList<Employee> getEmployeeArrayList() {
         return EmployeeArrayList;
     }
-@PutMapping("/update_Employee/{name}/{index}")
+@RequestMapping("/update_Employee/{name}/{index}")
     public String update(@PathVariable String name,@PathVariable int index){
 
        Employee employee = EmployeeArrayList.get(index);
@@ -29,7 +32,7 @@ public class Employee_Crud_Controller {
 
        return "name update successfully";
     }
-    @DeleteMapping("/remove_employee/{index}")
+    @RequestMapping("/remove_employee/{index}")
     public String remove (@PathVariable int index){
 
       EmployeeArrayList.remove(index);
